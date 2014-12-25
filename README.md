@@ -68,7 +68,7 @@ by the admin UI. The best place to decode this is on the
 
 ## Workstation tips
 
-* [Example setup scripts](https://github.com/syncthing/syncthing/tree/master/etc
+* [Example setup scripts](https://github.com/syncthing/syncthing/tree/master/etc)
 * [Windows Tray](https://discourse.syncthing.net/t/syncthingtray-for-windows/586)
 * [MacOS Menu Item](https://discourse.syncthing.net/t/syncthing-bar-for-os-x/1582)
 
