@@ -7,6 +7,8 @@ a group of people. Although this container can be used on a personal
 workstation, it will not be very convenient. It's best to download a native
 distribution for your machine from [Syncthing](http://syncthing.net).
 
+## Video: Syncthing Overview and Demo
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=ycVM5pdH3xg" target="_blank"><img src="http://img.youtube.com/vi/ycVM5pdH3xg/0.jpg" alt="Syncthing Overview and Demo" width="240" height="180" border="10" /></a>
 
 ## Building the image
