@@ -19,7 +19,7 @@ RUN mkdir -p /srv && \
 
 # Version of Syncthing to retrieve
 # This is a crazy way of updating, but it is early in the dev cycle
-ENV VERSION 0.10.23
+ENV VERSION 0.11.2
 
 # get binary from official distro
 WORKDIR /tmp
