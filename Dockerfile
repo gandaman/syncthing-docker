@@ -1,21 +1,19 @@
 # Docker container for Syncthing
 #
-# docker build -t ptimof/syncthing .
+# ... forked from ptimof/syncthing
 
-FROM ubuntu:14.04
-
-MAINTAINER Peter Timofejew <peter@timofejew.com>
+FROM phusion/baseimage:0.9.17
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y wget
 
 # add syncthing user (Note: must match uid/gid on host computer)
 RUN groupadd -g 800 syncthing && \
-	useradd -m -u 800 -g 800 syncthing
+    useradd -m -u 800 -g 800 syncthing
 
 # create binary directory that's r/w by syncthing
 RUN mkdir -p /srv && \
-	chown syncthing:syncthing /srv
+    chown syncthing:syncthing /srv
 
 # Version of Syncthing to retrieve
 # This is a crazy way of updating, but it is early in the dev cycle
@@ -44,6 +42,6 @@ VOLUME ["/home/syncthing"]
 
 EXPOSE 8000 22000 21025/udp
 
-CMD ["--no-browser", "--no-restart", "--gui-address", "https://0.0.0.0:8080" ]
+CMD [ "--no-browser", "--no-restart", "--gui-address", "https://0.0.0.0:8080" ]
 
 ENTRYPOINT ["/srv/syncthingd"]
