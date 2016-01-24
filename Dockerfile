@@ -5,7 +5,6 @@
 FROM phusion/baseimage:0.9.17
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get install -y wget
 
 # add syncthing user (Note: must match uid/gid on host computer)
 RUN groupadd -g 800 syncthing && \
@@ -21,7 +20,8 @@ ENV VERSION 0.11.2
 
 # get binary from official distro
 WORKDIR /tmp
-RUN wget -q https://github.com/syncthing/syncthing/releases/download/v${VERSION}/syncthing-linux-amd64-v${VERSION}.tar.gz && \
+
+RUN curl -# -L -O https://github.com/syncthing/syncthing/releases/download/v${VERSION}/syncthing-linux-amd64-v${VERSION}.tar.gz && \
         tar xf syncthing-linux-amd64-v${VERSION}.tar.gz && \
         cp syncthing-linux-amd64-v${VERSION}/syncthing /srv && \
         rm -r syncthing-linux-amd64-v${VERSION}.tar.gz syncthing-linux-amd64-v${VERSION}
